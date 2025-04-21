@@ -8,6 +8,7 @@ import ButtonTheme from "./Theme/ButtonTheme";
 import { AccessProvider } from "./Theme/ThemeContext";
 import './App.css';
 import Mayur from "./Mayur";
+import NewFile from "./newFile";
 function App() {
 useEffect(() =>{
 console.log('render')
@@ -27,9 +28,10 @@ return () => console.log('hello mayur')
 <div>
   <AccessProvider>
     <div>
- <h1>Theme Changer</h1>
+ {/* <h1>Theme Changer</h1>
   <ButtonTheme/>
-  <Mayur/>
+  <Mayur/> */}
+<NewFile/>
     </div>
 
   </AccessProvider>
