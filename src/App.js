@@ -1,14 +1,16 @@
 
 import React, {use, useEffect} from "react";
-import Memohook from "./memohook";
 import Form from "./Form";
+import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Switch, Routes } from 'react-router-dom';
 import SuccessPage from "./Sucesspage";
 import ButtonTheme from "./Theme/ButtonTheme";
 import { AccessProvider } from "./Theme/ThemeContext";
 import './App.css';
 import Mayur from "./Mayur";
-import NewFile from "./newFile";
+import CounterCallback from "./Counter/CounterCallback";
+import UseMemoHook from "./UseMemo/UseMemoHook";
+import FetchApi from "./Promise/FetchApi";
 function App() {
 useEffect(() =>{
 console.log('render')
@@ -31,7 +33,13 @@ return () => console.log('hello mayur')
  {/* <h1>Theme Changer</h1>
   <ButtonTheme/>
   <Mayur/> */}
-<NewFile/>
+{/* <NewFile/> */}
+{/* <CounterCallback/> */}
+<Suspense fallback={<div>...Laoding</div>}>
+{/* <UseMemoHook/> */}
+<FetchApi/>
+</Suspense>
+
     </div>
 
   </AccessProvider>
