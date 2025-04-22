@@ -36,7 +36,7 @@ return () => console.log('hello mayur')
 {/* <NewFile/> */}
 {/* <CounterCallback/> */}
 <Suspense fallback={<div>...Laoding</div>}>
-{/* <UseMemoHook/> */}
+<UseMemoHook/>
 <FetchApi/>
 </Suspense>
 
