@@ -11,6 +11,8 @@ import Mayur from "./Mayur";
 import CounterCallback from "./Counter/CounterCallback";
 import UseMemoHook from "./UseMemo/UseMemoHook";
 import FetchApi from "./Promise/FetchApi";
+import { FormProvider } from "./FormContext/FormContext";
+import FormApi from "./FormContext/FormApi";
 function App() {
 useEffect(() =>{
 console.log('render')
@@ -29,18 +31,22 @@ return () => console.log('hello mayur')
 </Router> */}
 <div>
   <AccessProvider>
-    <div>
+    <FormProvider>
+      <FormApi/>
+    </FormProvider>
+    {/* <div> */}
  {/* <h1>Theme Changer</h1>
   <ButtonTheme/>
   <Mayur/> */}
 {/* <NewFile/> */}
 {/* <CounterCallback/> */}
-<Suspense fallback={<div>...Laoding</div>}>
+{/* <Suspense fallback={<div>...Laoding</div>}>
 <UseMemoHook/>
 <FetchApi/>
-</Suspense>
+</Suspense> */}
 
-    </div>
+
+    {/* </div> */}
 
   </AccessProvider>
  
@@ -52,3 +58,5 @@ export default App;
 
 
 //usestate and usemmemo
+
+//
