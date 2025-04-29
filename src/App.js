@@ -13,6 +13,7 @@ import UseMemoHook from "./UseMemo/UseMemoHook";
 import FetchApi from "./Promise/FetchApi";
 import { FormProvider } from "./FormContext/FormContext";
 import FormApi from "./FormContext/FormApi";
+import UseReducerCounter from "./UseReducer/UseReducerCounter";
 function App() {
 useEffect(() =>{
 console.log('render')
@@ -33,6 +34,7 @@ return () => console.log('hello mayur')
   <AccessProvider>
     <FormProvider>
       <FormApi/>
+      <UseReducerCounter/>
     </FormProvider>
     {/* <div> */}
  {/* <h1>Theme Changer</h1>
