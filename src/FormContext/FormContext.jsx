@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import axios from "axios";
 
 const FormContext = createContext()
  export const UseFormContext = () =>{
@@ -35,8 +36,24 @@ const FormContext = createContext()
     }
    
    }
+   /////user context
+   const [users,SetUsers]= useState([])
+   const [loading, setLoading] = useState(false)
+   const [error1, setError1] = useState(null)
+   const fetchusers = async() => {
+    setLoading(true)
+    try {
+      const res = await axios.get('https://jsonplaceholder.typicode.com/users')
+      SetUsers(res.data)
+      setError(null)
+    } catch (error) {
+      setError('Failed something')
+    }finally {
+      setLoading(false);
+    }
+   }
     return(
-        <FormContext.Provider value={{handleChane, hanndleSubmit, Formdata, error}}>
+        <FormContext.Provider value={{handleChane, hanndleSubmit, Formdata, error, users, loading, fetchusers, error1}}>
             {children}
         </FormContext.Provider>
     )

@@ -14,6 +14,8 @@ import FetchApi from "./Promise/FetchApi";
 import { FormProvider } from "./FormContext/FormContext";
 import FormApi from "./FormContext/FormApi";
 import UseReducerCounter from "./UseReducer/UseReducerCounter";
+import UserApi from "./FormContext/UserApi";
+import ParentForm from "./FormValidation/ParentForm";
 function App() {
 useEffect(() =>{
 console.log('render')
@@ -33,8 +35,10 @@ return () => console.log('hello mayur')
 <div>
   <AccessProvider>
     <FormProvider>
-      <FormApi/>
-      <UseReducerCounter/>
+      <UserApi/>
+      <ParentForm/>
+      {/* <FormApi/>
+      <UseReducerCounter/> */}
     </FormProvider>
     {/* <div> */}
  {/* <h1>Theme Changer</h1>
