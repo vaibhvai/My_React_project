@@ -19,7 +19,7 @@ const FormContext = createContext()
   }
    const Validate = () => {
    const NewError = {}
-   if(!Formdata.name) NewError.name ='Name is required'
+   if(!Formdata.name) NewError.name ='Name is required' 
    if(!Formdata.mail) NewError.mail = 'Email is required'
    if(!Formdata.password || Formdata.password.length < 4) NewError.password = 'Please enter valid password'
    setError(NewError)
@@ -45,9 +45,9 @@ const FormContext = createContext()
     try {
       const res = await axios.get('https://jsonplaceholder.typicode.com/users')
       SetUsers(res.data)
-      setError(null)
+      setError1(null)
     } catch (error) {
-      setError('Failed something')
+      setError1('Failed something')
     }finally {
       setLoading(false);
     }

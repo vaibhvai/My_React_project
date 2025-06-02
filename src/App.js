@@ -1,4 +1,3 @@
-
 import React, {use, useEffect} from "react";
 import Form from "./Form";
 import { Suspense, lazy } from "react";
@@ -14,8 +13,10 @@ import FetchApi from "./Promise/FetchApi";
 import { FormProvider } from "./FormContext/FormContext";
 import FormApi from "./FormContext/FormApi";
 import UseReducerCounter from "./UseReducer/UseReducerCounter";
-import UserApi from "./FormContext/UserApi";
 import ParentForm from "./FormValidation/ParentForm";
+import ColorPalette from "./ColorPalette/ColorPalette";
+import UseMemoFib from "./UseMemo/UseMemoFib";
+
 function App() {
 useEffect(() =>{
 console.log('render')
@@ -35,8 +36,10 @@ return () => console.log('hello mayur')
 <div>
   <AccessProvider>
     <FormProvider>
-      <UserApi/>
-      <ParentForm/>
+      {/* <UserApi/>
+      <ParentForm/> */}
+     {/* <ColorPalette/> */}
+     <UseMemoFib/>
       {/* <FormApi/>
       <UseReducerCounter/> */}
     </FormProvider>
@@ -62,7 +65,3 @@ return () => console.log('hello mayur')
 }
 export default App;
 
-
-//usestate and usemmemo
-
-//
