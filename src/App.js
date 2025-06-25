@@ -16,6 +16,7 @@ import UseReducerCounter from "./UseReducer/UseReducerCounter";
 import ParentForm from "./FormValidation/ParentForm";
 import ColorPalette from "./ColorPalette/ColorPalette";
 import UseMemoFib from "./UseMemo/UseMemoFib";
+import UseForm from "./UseForm/UseForm";
 
 function App() {
 useEffect(() =>{
@@ -24,22 +25,20 @@ return () => console.log('hello mayur')
 },[])
   return(
 <>
-{/* <Router>
+<Router>
   <switch>
     <Routes>
-    <Route path="/" exact Component={Form}/>
+    <Route path="/" element={<UseForm />} />
     <Route path="Success" exact Component={SuccessPage}/>
     </Routes>
-  
-  </switch>
-</Router> */}
-<div>
+  <div>
   <AccessProvider>
     <FormProvider>
       {/* <UserApi/>
       <ParentForm/> */}
      {/* <ColorPalette/> */}
-     <UseMemoFib/>
+     {/* <UseMemoFib/> */}
+     {/* <UseForm/> */}
       {/* <FormApi/>
       <UseReducerCounter/> */}
     </FormProvider>
@@ -60,6 +59,9 @@ return () => console.log('hello mayur')
   </AccessProvider>
  
 </div>
+  </switch>
+</Router>
+
 </>
   )
 }
