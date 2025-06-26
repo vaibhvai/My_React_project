@@ -17,20 +17,23 @@ import ParentForm from "./FormValidation/ParentForm";
 import ColorPalette from "./ColorPalette/ColorPalette";
 import UseMemoFib from "./UseMemo/UseMemoFib";
 import UseForm from "./UseForm/UseForm";
-
-function App() {
-useEffect(() =>{
-console.log('render')
-return () => console.log('hello mayur')
-},[])
+import { useSelector } from 'react-redux';
+import Login from "./DoctorInfo/login";
+import Dashboard from "./DoctorInfo/Dashboard";
+import './Styles/Styles.css'
+const  App = ()  => {
+const IsAuthenticated = useSelector(state => state.doctor.isAuthenticated)
   return(
 <>
 <Router>
   <switch>
-    <Routes>
+      <Routes>
+        <Route path="/" element={IsAuthenticated ? <Dashboard /> : <Login />} />
+      </Routes>
+    {/* <Routes>
     <Route path="/" element={<UseForm />} />
     <Route path="Success" exact Component={SuccessPage}/>
-    </Routes>
+    </Routes> */}
   <div>
   <AccessProvider>
     <FormProvider>
